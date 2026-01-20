@@ -1,0 +1,73 @@
+.navbar {
+    position: fixed;      
+    top: 0;               
+    left: 0;             
+    width: 100%;         
+    z-index: 1000;     
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    color: white;
+    transition: background-color 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-items a {
+  position: relative;
+  display: inline-block; 
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+
+  font-family: 'Inter var', sans-serif;
+  font-variation-settings: "wght" 400;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    letter-spacing 0.3s ease,
+    font-variation-settings 0.3s ease;
+}
+
+
+/* Subrayado animado */
+.navbar-items a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.7px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 1rem;
+}
+
+.navbar-items a:hover {
+  color: var(--primary-color);
+  font-variation-settings: "wght" 650;
+}
+
+.navbar-items a:hover::after {
+  width: 70%;
+}
+
+.navbar-items.active a {
+  color: var(--primary-color);
+  font-variation-settings: "wght" 650;
+}
+
+/* Subrayado animado SIEMPRE visible en el activo */
+.navbar-items.active a::after {
+  width: 70%;
+}
+

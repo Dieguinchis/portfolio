@@ -1,0 +1,42 @@
+:root {
+  --primary-color: rgba(255, 113, 90); /* rojo anaranjado */
+  --background-color: rgba(18, 30, 40); /* azul oscuro */
+  --text-color: #fafbf9; /* blanco */
+  --text-secondary-color: #cfd8dc; /* gris claro */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Layout base ===== */
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth; /* scroll suave para links con # */
+  background-color:var(--background-color);
+  color: var(--text-color);
+  letter-spacing: 1.2px;
+}
+
+main {
+  flex: 1; /* ocupa el espacio disponible entre navbar y footer */
+}
+
+span {
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  display: flex;
+  justify-content: center; 
+  color: var(--text-color);
+  display: flex;
+  gap: 1rem;
+}
+

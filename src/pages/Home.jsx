@@ -1,0 +1,73 @@
+import { useEffect, useState } from "react";
+import "@/styles/home.css";
+import Button from "../components/Button";
+
+const words = [
+  "Frontend Developer",
+  "React Developer",
+  "UI Lover",
+  "Apasionado por crear experiencias web",
+];
+
+function Home() {
+  const typingSpeed = 120;
+  const deletingSpeed = 60;
+  const pauseTime = 1200;
+
+  const [wordIndex, setWordIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    let timeout;
+
+    if (!isDeleting && text.length < currentWord.length) {
+      timeout = setTimeout(() => {
+        setText(currentWord.slice(0, text.length + 1));
+      }, typingSpeed);
+    } else if (isDeleting && text.length > 0) {
+      timeout = setTimeout(() => {
+        setText(currentWord.slice(0, text.length - 1));
+      }, deletingSpeed);
+    } else {
+      timeout = setTimeout(() => {
+        setIsDeleting(!isDeleting);
+
+        if (isDeleting) {
+          setWordIndex((prev) => (prev + 1) % words.length);
+        }
+      }, pauseTime);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, wordIndex]);
+
+  return (
+    <section id="home" className="hero">
+      <div className="hero-content">
+
+        <h1>
+          Hola, <br />soy <span>Diego Colmenares</span>
+        </h1>
+
+        {/* 👇 Badge animado */}
+        <span className="hero-badge typing">
+          {text}
+          <span className="cursor">|</span>
+        </span>
+
+        <div className="hero-buttons">
+          <Button variant="primary" as="a" href="#projects">
+            Ver CV
+          </Button>
+          <Button variant="secondary" as="a" href="#contact">
+            Ver proyectos
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Home;
