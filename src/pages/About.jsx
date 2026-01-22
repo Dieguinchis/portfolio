@@ -30,7 +30,7 @@ function About() {
           </div>
         </div>
         <div className="about-info">
-          <h2>Sobre <span>mí</span></h2>
+          <h2 className="subtitle">Sobre <span className="highlight">mí</span></h2>
           <Divider />
           <p>
             Desarrollo interfaces modernas, rápidas y accesibles con React,

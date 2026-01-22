@@ -1,5 +1,6 @@
 :root {
-  --primary-color: rgba(255, 113, 90); /* rojo anaranjado */
+  --primary-color: #ff4c3b; /* rojo brillante */
+  --secundary-color: rgba(255, 113, 90); /* rojo anaranjado */
   --background-color: rgba(18, 30, 40); /* azul oscuro */
   --text-color: #fafbf9; /* blanco */
   --text-secondary-color: #cfd8dc; /* gris claro */
@@ -25,11 +26,35 @@ main {
   flex: 1; /* ocupa el espacio disponible entre navbar y footer */
 }
 
-span {
-  color: var(--primary-color);
+/* Scroll general */
+::-webkit-scrollbar {
+  width: 7px;
 }
 
-h2 {
+/* Fondo del scroll */
+::-webkit-scrollbar-track {
+  background: var(--background-color); /* fondo oscuro */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0 0 16px 7px #ff4c3b88;
+  transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--primary-color) 0%,
+    #ffb347 30%,
+    #fff176 50%,
+    #ffb347 70%,
+    var(--primary-color) 100%
+  );
+}
+
+.subtitle {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
@@ -40,3 +65,6 @@ h2 {
   gap: 1rem;
 }
 
+.highlight {
+  color: var(--primary-color);
+}

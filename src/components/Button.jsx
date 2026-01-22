@@ -4,7 +4,7 @@ import "@/styles/button.css";
 function Button({ children, variant = "primary", ...props }) {
   return (
     <button className={`btn ${variant}`} {...props}>
-      {children}
+      <span>{children}</span>
     </button>
   );
 }

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import "@/styles/home.css";
-import Button from "../components/Button";
+import Button from "@/components/Button";
 
 const words = [
   "Frontend Developer",
   "React Developer",
-  "UI Lover",
-  "Apasionado por crear experiencias web",
+  "UI Lover"
 ];
 
 function Home() {
@@ -45,17 +44,36 @@ function Home() {
 
   return (
     <section id="home" className="hero">
+      <div className="hero-bg-deco"></div>
+
+      <div className="hero-arrows">
+        <span className="arrow left"></span>
+        <span className="arrow right"></span>
+      </div>
+
       <div className="hero-content">
 
-        <h1>
-          Hola, <br />soy <span>Diego Colmenares</span>
-        </h1>
+        <div className="hero-intro">
+          <span className="hero-hello">
+            Hola<span className="hero-dot">.</span>
+          </span>
+        </div>
 
-        {/* 👇 Badge animado */}
-        <span className="hero-badge typing">
-          {text}
-          <span className="cursor">|</span>
-        </span>
+        <div className="hero-center">
+          <h2 className="hero-im">
+            Soy{" "} <span className="hero-name">Diego Colmenares</span>
+          </h2>
+          <div className="hero-line"></div>
+        </div>
+
+        <div>
+          <h1 className="hero-title">Desarrollador Frontend</h1>
+
+          <span className="hero-badge typing">
+            {text}
+            <span className="cursor">|</span>
+          </span>
+        </div>
 
         <div className="hero-buttons">
           <Button variant="primary" as="a" href="#projects">
@@ -65,7 +83,9 @@ function Home() {
             Ver proyectos
           </Button>
         </div>
+
       </div>
+
     </section>
   );
 }

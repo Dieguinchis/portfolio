@@ -1,9 +1,10 @@
 import Divider from "@/components/Divider";
+import "@/styles/contact.css";
 
 function Contact() {
   return (
     <section id="contact">
-      <h2>Contacto</h2>
+      <h2 className="subtitle">Contacto</h2>
       <Divider />
     </section>
   );
