@@ -33,9 +33,11 @@ function About() {
           <h2 className="subtitle">Sobre <span className="highlight">mí</span></h2>
           <Divider />
           <p>
-            Desarrollo interfaces modernas, rápidas y accesibles con React,
-            JavaScript y CSS. Me enfoco en crear experiencias limpias y
-            profesionales.
+            Me apasiona el desarrollo web y la creación de experiencias digitales funcionales y eficientes. 
+            Disfruto transformar ideas en soluciones claras, bien estructuradas y fáciles de usar, cuidando
+            cada detalle para lograr resultados sólidos y profesionales.
+            Me mantengo en constante aprendizaje y adaptación, con una mentalidad orientada a la mejora continua, 
+            la organización y la calidad en cada proyecto.
           </p>
           <div className="about-stats">
             <div className="about-stat">

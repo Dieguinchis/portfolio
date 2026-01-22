@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "@/styles/navbar.css";
+import Logo from "@/components/Logo";
 
 const sections = [
   { id: "home", label: "Inicio" },
@@ -32,7 +33,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div>
-        <h1 className="navbar-logo">Mi Portafolio</h1>
+        <span className="navbar-logo"><Logo size={120} /></span>
       </div>
       <div>
         <ul className="navbar-list">
