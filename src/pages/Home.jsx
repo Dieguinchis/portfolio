@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "@/styles/home.css";
 import Button from "@/components/Button";
+import CvIcon from "@/assets/cv.svg?react";
 
 const words = [
   "Frontend Developer",
@@ -77,7 +78,7 @@ function Home() {
 
         <div className="hero-buttons">
           <Button variant="primary" as="a" href="#projects">
-            Ver CV
+            VER CV <CvIcon className="cv-icon" style={{ width: 20, height: 20, marginLeft: 4 }} />
           </Button>
           <Button variant="secondary" as="a" href="#contact">
             Ver proyectos

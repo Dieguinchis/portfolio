@@ -23,9 +23,9 @@
 }
 
 .hero-content {
-  max-width: 50%;
+  max-width: 600px;
   text-align: left;
-  margin-left: 6.5rem;
+  margin-left: 3rem;
   padding-top: 4rem;
 
 }
@@ -192,4 +192,8 @@
 .arrow.right {
   --rot: 45deg;
   animation-delay: 0s;
+}
+.cv-icon {
+  fill: currentColor;
+  transform: translateY(3px);
 }

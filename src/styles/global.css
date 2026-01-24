@@ -1,9 +1,10 @@
 :root {
   --primary-color: #ff4c3b; /* rojo brillante */
   --secundary-color: rgba(255, 113, 90); /* rojo anaranjado */
-  --background-color: rgba(18, 30, 40); /* azul oscuro */
+  --background-color: #0A0E1A; /* azul oscuro */
   --text-color: #fafbf9; /* blanco */
   --text-secondary-color: #cfd8dc; /* gris claro */
+  --border-color: #808080; /* gris medio */
 }
 
 *{
@@ -20,6 +21,10 @@ html, body {
   background-color:var(--background-color);
   color: var(--text-color);
   letter-spacing: 1.2px;
+}
+
+section {
+  padding: 4rem 4rem 3rem 4rem;
 }
 
 main {
@@ -55,7 +60,7 @@ main {
 }
 
 .subtitle {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
   display: flex;
@@ -67,4 +72,5 @@ main {
 
 .highlight {
   color: var(--primary-color);
+  font-weight: 700;
 }
