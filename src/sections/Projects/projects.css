@@ -1,0 +1,29 @@
+.projects-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENEDOR */
+.projects-container {
+  max-width: 1400px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* GRID DE PROYECTOS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+/* BOTÓN TOGGLE */
+.projects-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}

@@ -1,17 +1,17 @@
 import "@/styles/global.css";
 
 import React, { useState, useEffect } from "react";
-import Loader from "@/components/Loader";
+import Loader from "@/components/Loader/Loader";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
-import Home from "@/pages/Home";
-import Skills from "@/pages/Skills";
-import Projects from "@/pages/Projects";
-import About from "@/pages/About";
-import Services from "@/pages/Services";
-import Contact from "@/pages/Contact";
+import Home from "@/sections/Home/Home";
+import Skills from "@/sections/Skills/Skills";
+import Projects from "@/sections/Projects/Projects";
+import About from "@/sections/About/About";
+import Services from "@/sections/Services/Services";
+import Contact from "@/sections/Contact/Contact";
 
 function App() {
   const [loading, setLoading] = useState(true);

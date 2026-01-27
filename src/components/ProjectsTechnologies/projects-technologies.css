@@ -1,0 +1,32 @@
+.tech-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech {
+  background: rgba(255, 76, 59, 0.15);
+  border: 1px solid rgba(255, 76, 59, 0.4);
+  border-radius: 25px;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.tech:hover {
+  background: rgba(255, 76, 59, 0.25);
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 76, 59, 0.3);
+}
+
+.tech.modal {
+  padding: 0.6rem 1.3rem;
+  font-size: 1rem;
+}
+
+.tech.card {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+}

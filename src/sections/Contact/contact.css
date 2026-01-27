@@ -1,0 +1,162 @@
+#contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+
+/* TÍTULO Y DIVIDER */
+#contact .subtitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contact-container {
+  max-width: 1200px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(255, 76, 59, 0.1);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 4rem;
+  position: relative;
+  transition: all 0.5s ease;
+  animation: scaleIn 0.8s ease-out 0.3s both;
+}
+
+.contact-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    transparent,
+    var(--primary-color)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.contact-container:hover::before {
+  opacity: 0.6;
+}
+
+.contact-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 35px 90px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(255, 76, 59, 0.2);
+}
+
+/* LADO IZQUIERDO - INFO */
+.contact-info-container {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(17, 21, 31, 0.6);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 76, 59, 0.05) 0%,
+    transparent 70%
+  );
+}
+
+.contact-info-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+/* BOTONES SOCIALES */
+.contact-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.contact-btn:hover {
+  transform: translateY(-6px) scale(1.1);
+  border-color: transparent;
+}
+
+.contact-btn.email:hover {
+  background: var(--email-color);
+  box-shadow: 0 12px 30px rgba(231, 76, 60, 0.5);
+}
+
+.contact-btn.github:hover {
+  background: var(--github-color);
+  box-shadow: 0 12px 30px rgba(24, 23, 23, 0.7);
+}
+
+.contact-btn.linkedin:hover {
+  background: var(--linkedin-color);
+  box-shadow: 0 12px 30px rgba(0, 119, 181, 0.5);
+}
+
+/* LADO DERECHO - FORMULARIO */
+.contact-form-container {
+  padding: 4rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #ff6b5a 50%, var(--primary-color) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}

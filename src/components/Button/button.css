@@ -1,0 +1,156 @@
+.btn {
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 1.2px;
+  padding: 0;
+  border: 2.5px solid;
+  text-transform: uppercase;
+  gap: 0.7rem;
+}
+
+.btn::after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.btn:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+.btn span {
+  text-align: center;
+  text-decoration: none;
+  padding: 0.7rem 1.9rem;
+  color: var(--text-color);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:hover span {
+  color: var(--primary-color);
+  animation: scaleUp 0.3s ease-in-out;
+}
+.btn svg{
+  transition: all 0.3s ease-in-out;
+}
+
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Variante primaria */
+.btn.primary {
+  background: var(--primary-color);
+  border: 2.5px solid var(--primary-color);
+}
+
+.btn.primary span {
+  color: var(--text-color);
+}
+
+.btn.primary:hover span {
+  color: var(--primary-color);
+}
+
+/* Variante secundaria */
+.btn.secondary {
+  background: transparent;
+}
+.btn.secondary span {
+  color: var(--text-color);
+}
+
+.btn.secondary:hover span {
+  color: var(--primary-color);
+}
+
+/* Variante formulario */
+.btn.form {
+  background:white;
+  border: 2.5px solid white;
+  padding: 0.2rem;
+}
+.btn.form::after {
+  background-color: var(--primary-color);
+}
+.btn.form span {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+.btn.form:hover span,
+.btn.form:hover svg  {
+  color: white;
+  fill: white;
+}
+
+/* Variante para botón de código */
+.btn.code {
+  background: var(--github-color);
+  border: 2.5px solid #020202;
+}
+.btn.code span {
+  color: #fff;
+}
+.btn.code:hover span,
+.btn.code:hover svg {
+  color: #020202;
+  fill: #020202;
+}
+
+
+/* Variante para botón de demo */
+.btn.demo {
+  background: var(--primary-color);
+  border: 2.5px solid var(--primary-color);
+}
+.btn.demo span {
+  color: white
+}
+.btn.demo:hover span,
+.btn.demo:hover svg {
+  color: var(--primary-color);
+}
+.btn.demo:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn.code,
+.btn.demo {
+  width: 100%;
+}
+
