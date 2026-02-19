@@ -5,64 +5,75 @@ import "./projects-cards.css";
 import GithubIcon from "@/assets/github.svg?react";
 import DemoIcon from "@/assets/demo.svg?react";
 import Tech from "@/components/ProjectsTechnologies/ProjectsTechnologies";
+import StarIcon from "@/assets/star.svg?react";
 
 function ProjectCard({ project }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Cambia la imagen automáticamente cada 5 segundos
+  // Carrusel automático
   useEffect(() => {
+    if (!project.images || project.images.length <= 1) return;
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) =>
         prev === project.images.length - 1 ? 0 : prev + 1
       );
     }, 5000);
-    return () => clearInterval(interval);
-  }, [project.images.length]);
 
-  // Función para cortar la descripción
-  const truncate = (str, maxLength) => {
-    if (!str) return "";
-    return str.length > maxLength ? str.slice(0, maxLength) + "..." : str;
+    return () => clearInterval(interval);
+  }, [project.images]);
+
+  const truncate = (text, maxLength) => {
+    if (!text) return "";
+    return text.length > maxLength
+      ? text.slice(0, maxLength) + "..."
+      : text;
   };
 
-  // Abrir modal al hacer clic en la card
   const handleCardClick = () => {
     setIsModalOpen(true);
   };
 
   return (
     <>
-      <div className="project-card" onClick={handleCardClick}>
-        {/* IMAGEN CON INDICADORES */}
+      <div
+        className={`project-card ${project.featured ? "featured" : ""}`}
+        onClick={handleCardClick}
+      >
+        {/* IMAGEN */}
         <div className="project-image-container">
+          {/* ⭐ BADGE DESTACADO (FUERA DEL ELEMENTO QUE SE ESCALA) */}
+          {project.featured && (
+            <div className="featured-badge">
+              <StarIcon className="featured-icon" />
+            </div>
+          )}
+
           <div
             className="project-image"
             style={{
               backgroundImage: `url(${project.images[currentImageIndex]})`,
             }}
           >
-            {/* Overlay oscuro */}
+            {/* Overlay */}
             <div className="project-overlay"></div>
 
             {/* Indicadores */}
             {project.images.length > 1 && (
               <div className="carousel-indicators">
                 {project.images.map((_, index) => (
-                  <button
+                  <span
                     key={index}
                     className={`indicator ${
                       index === currentImageIndex ? "active" : ""
                     }`}
-                    aria-label={`Imagen ${index + 1}`}
-                    tabIndex={-1}
                   />
                 ))}
               </div>
             )}
 
-
-            {/* Ver más overlay */}
+            {/* Ver más */}
             <div className="view-more-overlay">
               <span className="view-more-text">Ver más</span>
             </div>
@@ -72,14 +83,14 @@ function ProjectCard({ project }) {
         {/* CONTENIDO */}
         <div className="project-content">
           <h3 className="project-title">{project.title}</h3>
+
           <p className="project-description">
             {truncate(project.Description, 120)}
           </p>
 
           {/* Tecnologías */}
           <div className="project-technologies">
-            <Tech technologies={project.technologies}
-            variant="card" />
+            <Tech technologies={project.technologies} variant="card" />
           </div>
 
           {/* Botones */}
@@ -94,6 +105,7 @@ function ProjectCard({ project }) {
             >
               <GithubIcon /> Código
             </Button>
+
             <Button
               as="a"
               href={project.demoUrl}

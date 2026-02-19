@@ -171,3 +171,27 @@
   gap: 1rem;
   margin-top: auto;
 }
+
+/* BADGE */
+.featured-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 30;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient( 135deg, var(--primary-color), rgba(255, 76, 59, 0.7) );
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(255, 76, 59, 0.45);
+}
+
+/* SVG */
+.featured-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
