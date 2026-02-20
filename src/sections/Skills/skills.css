@@ -485,8 +485,7 @@
 
 /* JAVASCRIPT ARROW */
 .indicator-js {
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
 }
 
@@ -504,9 +503,8 @@
 
 /* HTML TAG */
 .indicator-html {
-  font-family: 'Courier New', monospace;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .indicator-html .tag {
